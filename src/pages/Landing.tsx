@@ -91,7 +91,7 @@ export default function Landing() {
             </p>
           </motion.div>
 
-          {/* Hero Image/Visual */}
+          {/* Before & After Images Grid */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,12 +99,47 @@ export default function Landing() {
             className="mt-16"
           >
             <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl p-8 shadow-2xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
-                <img
-                  src="https://www.inklessismore.ke/cdn/shop/files/Let_your_skin_shine_again_f58f70d5-03eb-4e86-8af8-917197560c0b.jpg?v=1731498799&width=3840"
-                  alt="Let your skin shine again"
-                  className="w-full h-full object-cover rounded-2xl"
-                />
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="space-y-2">
+                  <img
+                    src="https://www.inklessismore.ke/cdn/shop/files/before1_720x.jpg?v=1731498799"
+                    alt="Before treatment 1"
+                    className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
+                  />
+                  <p className="text-center text-sm font-medium">Before</p>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="https://www.inklessismore.ke/cdn/shop/files/after1_720x.jpg?v=1731498799"
+                    alt="After treatment 1"
+                    className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
+                  />
+                  <p className="text-center text-sm font-medium">After</p>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="https://www.inklessismore.ke/cdn/shop/files/before2_720x.jpg?v=1731498799"
+                    alt="Before treatment 2"
+                    className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
+                  />
+                  <p className="text-center text-sm font-medium">Before</p>
+                </div>
+                <div className="space-y-2">
+                  <img
+                    src="https://www.inklessismore.ke/cdn/shop/files/after2_720x.jpg?v=1731498799"
+                    alt="After treatment 2"
+                    className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
+                  />
+                  <p className="text-center text-sm font-medium">After</p>
+                </div>
+              </div>
+              <div className="text-center mt-6">
+                <Link to="/gallery">
+                  <Button variant="outline" className="rounded-full backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20">
+                    View More Results
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </Card>
           </motion.div>
@@ -172,7 +207,7 @@ export default function Landing() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <img
-                    src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600&h=400&fit=crop"
+                    src="https://www.inklessismore.ke/cdn/shop/files/before3_720x.jpg?v=1731498799"
                     alt="Before treatment"
                     className="w-full h-64 object-cover rounded-2xl shadow-lg"
                   />
@@ -180,7 +215,7 @@ export default function Landing() {
                 </div>
                 <div className="space-y-4">
                   <img
-                    src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&h=400&fit=crop"
+                    src="https://www.inklessismore.ke/cdn/shop/files/after3_720x.jpg?v=1731498799"
                     alt="After treatment"
                     className="w-full h-64 object-cover rounded-2xl shadow-lg"
                   />
