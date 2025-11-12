@@ -72,53 +72,69 @@ export const seed = internalMutation({
       await ctx.db.delete(img._id);
     }
 
-    // Seed gallery images with working URLs from inklessismore.ke
+    // Seed gallery images with real uploaded photos
     await ctx.db.insert("galleryImages", {
-      title: "Arm Tattoo Removal Progress",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-988.webp?v=1746384053&width=533",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-994.webp?v=1746384056&width=533",
-      description: "Significant fading after laser treatment sessions",
+      title: "Back Tattoo Removal - First Session Results",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1af3b1a5-d4df-4b41-a82a-76e9923501fd",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/9df7f620-4a33-4177-aa0c-1b0d564917a9",
+      description: "Visible fading after just one session",
       order: 1,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Small Tattoo Removal",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-991.webp?v=1746384077&width=533",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-244.webp?v=1746384080&width=533",
-      description: "Complete removal of small tattoo after 3 sessions",
+      title: "Arm Tattoo Removal Progress",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/c1355793-0ef2-4b2f-b760-f52962ca1595",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/d9e03b4c-a25e-4772-8e3b-2481b07fb4c9",
+      description: "Significant fading after multiple sessions",
       order: 2,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Medium Tattoo Treatment",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-316.webp?v=1746384112&width=533",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-753.webp?v=1746384115&width=533",
-      description: "Effective fading of medium-sized tattoo",
+      title: "Small Tattoo Complete Removal",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/47a2922a-9f35-4e37-981e-1338710ef545",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/08165c61-0a19-4a51-8782-a7f41feff4f1",
+      description: "Nearly complete removal after treatment course",
       order: 3,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Scar Removal Treatment",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Laser_Scar_Removal_Package.jpg?v=1753974281&width=533",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Laser_Scar_Removal.jpg?v=1753974243&width=533",
-      description: "Professional laser scar removal results",
+      title: "Shoulder Tattoo Treatment",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/be72edff-e720-4ae7-8bb9-e79a9274c3eb",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/993aad1a-0826-4050-a2c1-aabb36b5d300",
+      description: "Professional results with Picosecond laser",
       order: 4,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Hero Section - Before Treatment",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Let_your_skin_shine_again_f58f70d5-03eb-4e86-8af8-917197560c0b.jpg?v=1731498799&width=1200",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-994.webp?v=1746384056&width=533",
-      description: "Transform your skin with advanced laser technology",
+      title: "Leg Tattoo Fading",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/46b6ff0c-ac5f-4e65-88fd-250f77ef7ea4",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/5e245880-bc80-43c8-8f2d-3133bdfdded7",
+      description: "Effective treatment on darker skin tones",
       order: 5,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Complete Transformation",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-991.webp?v=1746384077&width=533",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-753.webp?v=1746384115&width=533",
-      description: "Real results from our satisfied clients",
+      title: "Wrist Tattoo Removal",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/f0da9263-b487-4dbb-97d3-0fb5b4501da2",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/25cff39b-8fa1-4b91-82f9-432b7b721778",
+      description: "Clean results after 3 sessions",
       order: 6,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Forearm Text Tattoo",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/0c54443a-cb25-48fc-b557-cd32cf9e10b2",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/503d829d-0884-401c-ab84-19710267b49a",
+      description: "Text tattoo successfully faded",
+      order: 7,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Ankle Tattoo Progress",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b65abe9b-bb6f-473b-a515-eff051f947b3",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b4d37961-fa87-4e95-88b7-245781c3773e",
+      description: "Gradual fading with each treatment",
+      order: 8,
     });
 
     // Seed site content with exact wording from inklessismore.ke
