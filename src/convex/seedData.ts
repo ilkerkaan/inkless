@@ -3,67 +3,87 @@ import { internalMutation } from "./_generated/server";
 export const seed = internalMutation({
   args: {},
   handler: async (ctx) => {
-    // Seed packages
+    // Seed packages with exact pricing from inklessismore.ke
     await ctx.db.insert("packages", {
-      name: "Small Tattoo Package",
-      description: "Ideal for tattoos up to 3x3 inches. Perfect for small symbols, names, or tiny designs.",
-      price: 5000,
+      name: "1 Single Laser Tattoo Removal Session",
+      description: "Perfect for trying out our service or for very small tattoos. Experience our advanced Picosecond laser technology with negative cold therapy.",
+      price: 4500,
       features: [
-        "Up to 3x3 inches coverage",
-        "2-4 sessions typically required",
-        "Advanced laser technology",
-        "Minimal discomfort",
-        "Free consultation included"
+        "Single treatment session",
+        "Advanced Picosecond laser technology",
+        "Negative cold therapy for comfort",
+        "Professional consultation included",
+        "Safe and effective treatment"
       ],
       isPopular: false,
       order: 1,
     });
 
     await ctx.db.insert("packages", {
-      name: "Full Sleeve Fading",
-      description: "Designed for larger pieces or full sleeves to lighten/fade for a cover-up or complete removal.",
-      price: 25000,
+      name: "3 Laser Tattoo Removal Sessions (Small Size Tattoo)",
+      description: "Ideal for small tattoos. Three sessions to effectively fade or remove your unwanted ink with our state-of-the-art technology.",
+      price: 10000,
       features: [
-        "Full arm coverage",
-        "6-10 sessions typically required",
-        "State-of-the-art Q-switched laser",
-        "Personalized treatment plan",
-        "Post-care support included"
+        "3 treatment sessions",
+        "Best for small size tattoos",
+        "Save KSh 3,500 with this package",
+        "Advanced Picosecond laser technology",
+        "Negative cold therapy included",
+        "Experienced professionals"
       ],
       isPopular: true,
       order: 2,
     });
 
     await ctx.db.insert("packages", {
-      name: "Custom Session Plan",
-      description: "A fully customized plan for multiple tattoos, complex colors, or unique removal challenges.",
+      name: "5 Laser Tattoo Removal Sessions (Medium Size Tattoo)",
+      description: "Perfect for medium-sized tattoos. Five comprehensive sessions to help you achieve the results you desire.",
       price: 15000,
       features: [
-        "Tailored to your specific needs",
-        "Flexible session scheduling",
-        "Multi-color removal capability",
-        "Progress tracking",
-        "Dedicated specialist"
+        "5 treatment sessions",
+        "Best for medium size tattoos",
+        "Save KSh 7,500 with this package",
+        "Advanced Picosecond laser technology",
+        "Negative cold therapy for comfort",
+        "Complete aftercare support"
       ],
       isPopular: false,
       order: 3,
     });
 
-    // Seed site content
+    await ctx.db.insert("packages", {
+      name: "Laser Scar Removal",
+      description: "Advanced laser treatment for scar removal. Reduce the appearance of scars and achieve smoother, more even skin tone.",
+      price: 15000,
+      features: [
+        "Complete scar removal treatment",
+        "Advanced laser technology",
+        "Safe and effective",
+        "Professional assessment included",
+        "Customized treatment plan"
+      ],
+      isPopular: false,
+      order: 4,
+    });
+
+    // Seed site content with exact wording from inklessismore.ke
     await ctx.db.insert("siteContent", {
       key: "about_us",
-      content: `# About InklessIsMore.ke
+      content: `# Uncover Flawless Skin with Advanced Laser Tattoo Removal in Nairobi
 
-We are Kenya's premier laser tattoo removal clinic, dedicated to helping you achieve clear, clean skin safely and effectively.
+Welcome to Nairobi's premier destination for safe and effective laser tattoo removal! At Inkless is More laser tattoo removal studio, we use the advanced Picosecond laser technology combined with negative cold therapy in tattoo removal to fade or remove unwanted tattoos safely and comfortably, with experienced professionals.
 
 ## Our Mission
-To provide safe, effective, and professional laser tattoo removal services using the latest technology and techniques.
+
+If your tattoo no longer feels like a part of you, we are here to help you fade or completely remove it safely. Reclaim your confidence and embrace flawless skin with Nairobi's most advanced Picosecond laser tattoo removal service.
 
 ## Our Technology
-We use advanced Q-switched laser technology that targets ink particles without damaging surrounding skin tissue.
 
-## Our Team
-Our certified specialists have years of experience in laser treatments and are committed to your comfort and results.`,
+We use advanced Picosecond laser technology combined with negative cold therapy to ensure safe, effective, and comfortable tattoo removal. Results depend on tattoo specifics, and our experienced professionals will guide you through every step of the process.
+
+## Let Your Skin Shine Again! Redefine Your Story!
+
+Whether you're looking to fade an old tattoo or achieve a complete removal, we're here to help you regain confidence in your skin.`,
     });
 
     await ctx.db.insert("siteContent", {

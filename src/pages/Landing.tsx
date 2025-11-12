@@ -11,12 +11,12 @@ export default function Landing() {
     {
       icon: <Sparkles className="h-8 w-8 text-cyan-400" />,
       title: "1. Consultation",
-      description: "We assess your tattoo and plan to create a personalized, safe removal plan tailored just for you.",
+      description: "We assess your tattoo and create a personalized, safe removal plan tailored just for you.",
     },
     {
       icon: <Zap className="h-8 w-8 text-cyan-400" />,
       title: "2. Treatment",
-      description: "Our advanced Q-switched laser technology safely and effectively breaks down the tattoo ink in your skin.",
+      description: "Our advanced Picosecond laser technology combined with negative cold therapy safely breaks down tattoo ink.",
     },
     {
       icon: <Heart className="h-8 w-8 text-cyan-400" />,
@@ -54,28 +54,28 @@ export default function Landing() {
             >
               <div className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl px-6 py-3 shadow-lg">
                 <span className="text-sm font-medium text-cyan-600 dark:text-cyan-400">
-                  ✨ Kenya's Premier Laser Tattoo Removal
+                  ✨ Kenya's Laser Tattoo Removal Experts
                 </span>
               </div>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Your Clean Slate
+              Uncover Flawless Skin
               <br />
               <span className="bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
-                Awaits
+                with Advanced Laser Tattoo Removal
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Experience safe, effective, and professional laser tattoo removal.
-              Begin your journey to clear skin today.
+              Welcome to Nairobi's premier destination for safe and effective laser tattoo removal! 
+              We use advanced Picosecond laser technology combined with negative cold therapy to fade or remove unwanted tattoos safely and comfortably.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/packages">
                 <Button size="lg" className="rounded-full px-8 backdrop-blur-sm bg-primary/90 hover:bg-primary shadow-lg">
-                  View Packages
+                  Book a Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -85,6 +85,10 @@ export default function Landing() {
                 </Button>
               </Link>
             </div>
+
+            <p className="text-lg font-semibold text-cyan-600 dark:text-yellow-500">
+              LET YOUR SKIN SHINE AGAIN! REDEFINE YOUR STORY!
+            </p>
           </motion.div>
 
           {/* Hero Image/Visual */}
@@ -97,8 +101,8 @@ export default function Landing() {
             <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl p-8 shadow-2xl overflow-hidden">
               <div className="aspect-video bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center">
                 <img
-                  src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1200&h=600&fit=crop"
-                  alt="Laser tattoo removal"
+                  src="https://www.inklessismore.ke/cdn/shop/files/Let_your_skin_shine_again_f58f70d5-03eb-4e86-8af8-917197560c0b.jpg?v=1731498799&width=3840"
+                  alt="Let your skin shine again"
                   className="w-full h-full object-cover rounded-2xl"
                 />
               </div>
