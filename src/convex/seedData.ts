@@ -72,68 +72,68 @@ export const seed = internalMutation({
       await ctx.db.delete(img._id);
     }
 
-    // Seed gallery images with real uploaded photos
+    // Seed gallery images with working URLs from Convex storage
     await ctx.db.insert("galleryImages", {
       title: "Back Tattoo Removal - First Session Results",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1af3b1a5-d4df-4b41-a82a-76e9923501fd",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/9df7f620-4a33-4177-aa0c-1b0d564917a9",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/308bf6f0-9632-4951-a07b-c2b256b044fa",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1f704a9b-5b73-4021-8a74-41e94141c996",
       description: "Visible fading after just one session",
       order: 1,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Arm Tattoo Removal Progress",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/c1355793-0ef2-4b2f-b760-f52962ca1595",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/d9e03b4c-a25e-4772-8e3b-2481b07fb4c9",
-      description: "Significant fading after multiple sessions",
+      title: "Arm Tattoo Treatment Progress",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/d03dabf7-72bd-4300-9279-5811ddf1259e",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/5c020335-158b-4527-b24c-e3a9ae852bbd",
+      description: "Professional laser treatment in progress",
       order: 2,
     });
 
     await ctx.db.insert("galleryImages", {
       title: "Small Tattoo Complete Removal",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/47a2922a-9f35-4e37-981e-1338710ef545",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/08165c61-0a19-4a51-8782-a7f41feff4f1",
-      description: "Nearly complete removal after treatment course",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/9e55ce9f-ca30-4a8a-9dd5-b68f1c732c92",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/8930d4fd-cca5-4652-89ed-85b6d5994102",
+      description: "Nearly complete removal after multiple sessions",
       order: 3,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Shoulder Tattoo Treatment",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/be72edff-e720-4ae7-8bb9-e79a9274c3eb",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/993aad1a-0826-4050-a2c1-aabb36b5d300",
-      description: "Professional results with Picosecond laser",
+      title: "Shoulder Tattoo Fading",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/bc123115-f23b-4547-a141-0530dedd64a6",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/5d4af9ef-c2ce-4523-aed0-8bff828e430a",
+      description: "Significant progress on shoulder tattoo",
       order: 4,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Leg Tattoo Fading",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/46b6ff0c-ac5f-4e65-88fd-250f77ef7ea4",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/5e245880-bc80-43c8-8f2d-3133bdfdded7",
-      description: "Effective treatment on darker skin tones",
+      title: "Wrist Tattoo Removal",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/0d4d9d51-80e5-4f57-b3fb-adcd909545b9",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/846af37c-17aa-45c7-9a88-ff3d90eae555",
+      description: "Effective treatment on delicate wrist area",
       order: 5,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Wrist Tattoo Removal",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/f0da9263-b487-4dbb-97d3-0fb5b4501da2",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/25cff39b-8fa1-4b91-82f9-432b7b721778",
-      description: "Clean results after 3 sessions",
+      title: "Forearm Text Tattoo - 3 Sessions",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/426a4a2e-a6b6-4f68-98ba-400794e10c96",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/12694330-691f-44c8-80b9-86ab0e171577",
+      description: "Text tattoo fading beautifully after 3 sessions",
       order: 6,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Forearm Text Tattoo",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/0c54443a-cb25-48fc-b557-cd32cf9e10b2",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/503d829d-0884-401c-ab84-19710267b49a",
-      description: "Text tattoo successfully faded",
+      title: "Ankle Tattoo Treatment",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b0cdc625-adf0-4356-a1d8-3afece0b7226",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/a76cad71-461c-447f-b1fb-a15358983329",
+      description: "Professional results on ankle tattoo",
       order: 7,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Ankle Tattoo Progress",
-      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b65abe9b-bb6f-473b-a515-eff051f947b3",
-      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b4d37961-fa87-4e95-88b7-245781c3773e",
-      description: "Gradual fading with each treatment",
+      title: "Leg Tattoo Removal Journey",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b90887dd-8553-4ed8-8994-07ebfe360273",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/a6cdf2c5-f015-4301-bd36-0ec121275e56",
+      description: "Remarkable transformation on leg tattoo",
       order: 8,
     });
 
