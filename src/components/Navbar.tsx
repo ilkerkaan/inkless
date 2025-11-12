@@ -52,7 +52,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="flex items-center space-x-2"
             >
-              <img src="/logo.svg" alt="InklessIsMore" className="h-8 w-8" />
+              <img src="/logo_bg.png" alt="InklessIsMore" className="h-10 w-10" />
               <span className="font-bold text-lg">InklessIsMore.ke</span>
             </motion.div>
           </Link>
