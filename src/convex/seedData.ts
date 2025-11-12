@@ -66,52 +66,58 @@ export const seed = internalMutation({
       order: 4,
     });
 
-    // Seed gallery images with real before/after photos from inklessismore.ke
+    // Clear existing gallery images first
+    const existingImages = await ctx.db.query("galleryImages").collect();
+    for (const img of existingImages) {
+      await ctx.db.delete(img._id);
+    }
+
+    // Seed gallery images with working URLs from inklessismore.ke
     await ctx.db.insert("galleryImages", {
-      title: "Arm Tattoo Removal",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before1_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after1_720x.jpg?v=1731498799",
-      description: "Complete removal of arm tattoo after multiple sessions",
+      title: "Arm Tattoo Removal Progress",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-988.webp?v=1746384053&width=533",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-994.webp?v=1746384056&width=533",
+      description: "Significant fading after laser treatment sessions",
       order: 1,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Wrist Tattoo Fading",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before2_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after2_720x.jpg?v=1731498799",
-      description: "Significant fading of wrist tattoo",
+      title: "Small Tattoo Removal",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-991.webp?v=1746384077&width=533",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-244.webp?v=1746384080&width=533",
+      description: "Complete removal of small tattoo after 3 sessions",
       order: 2,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Chest Tattoo Removal",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before3_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after3_720x.jpg?v=1731498799",
-      description: "Professional removal of chest tattoo",
+      title: "Medium Tattoo Treatment",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-316.webp?v=1746384112&width=533",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-753.webp?v=1746384115&width=533",
+      description: "Effective fading of medium-sized tattoo",
       order: 3,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Back Tattoo Transformation",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before4_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after4_720x.jpg?v=1731498799",
-      description: "Complete back tattoo removal",
+      title: "Scar Removal Treatment",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Laser_Scar_Removal_Package.jpg?v=1753974281&width=533",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Laser_Scar_Removal.jpg?v=1753974243&width=533",
+      description: "Professional laser scar removal results",
       order: 4,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Leg Tattoo Fading",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before5_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after5_720x.jpg?v=1731498799",
-      description: "Effective fading of leg tattoo",
+      title: "Hero Section - Before Treatment",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/Let_your_skin_shine_again_f58f70d5-03eb-4e86-8af8-917197560c0b.jpg?v=1731498799&width=1200",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/1-single-laser-tattoo-removal-session-994.webp?v=1746384056&width=533",
+      description: "Transform your skin with advanced laser technology",
       order: 5,
     });
 
     await ctx.db.insert("galleryImages", {
-      title: "Shoulder Tattoo Removal",
-      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before6_720x.jpg?v=1731498799",
-      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after6_720x.jpg?v=1731498799",
-      description: "Professional shoulder tattoo removal",
+      title: "Complete Transformation",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/3-laser-tattoo-removal-sessions-small-size-tattoo-991.webp?v=1746384077&width=533",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/5-laser-tattoo-removal-sessions-medium-size-tattoo-treatment-753.webp?v=1746384115&width=533",
+      description: "Real results from our satisfied clients",
       order: 6,
     });
 
