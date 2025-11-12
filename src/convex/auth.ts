@@ -2,8 +2,8 @@
 
 import { convexAuth } from "@convex-dev/auth/server";
 import { Anonymous } from "@convex-dev/auth/providers/Anonymous";
-import { emailOtp } from "./auth/emailOtp";
-import { phoneOtp } from "./auth/phoneOtp";
+import { emailOtp } from "./authProviders/emailOtp";
+import { phoneOtp } from "./authProviders/phoneOtp";
 
 
 export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
