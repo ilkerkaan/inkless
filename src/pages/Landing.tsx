@@ -124,7 +124,7 @@ export default function Landing() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="space-y-2">
                   <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/1af3b1a5-d4df-4b41-a82a-76e9923501fd"
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/308bf6f0-9632-4951-a07b-c2b256b044fa"
                     alt="Before treatment 1"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
                   />
@@ -132,7 +132,7 @@ export default function Landing() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/9df7f620-4a33-4177-aa0c-1b0d564917a9"
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/1f704a9b-5b73-4021-8a74-41e94141c996"
                     alt="After treatment 1"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
                   />
@@ -140,7 +140,7 @@ export default function Landing() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/c1355793-0ef2-4b2f-b760-f52962ca1595"
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/d03dabf7-72bd-4300-9279-5811ddf1259e"
                     alt="Before treatment 2"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
                   />
@@ -148,7 +148,7 @@ export default function Landing() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://harmless-tapir-303.convex.cloud/api/storage/d9e03b4c-a25e-4772-8e3b-2481b07fb4c9"
+                    src="https://harmless-tapir-303.convex.cloud/api/storage/5c020335-158b-4527-b24c-e3a9ae852bbd"
                     alt="After treatment 2"
                     className="w-full h-32 object-cover rounded-2xl shadow-lg hover:scale-105 transition-transform"
                   />
