@@ -3,7 +3,13 @@ import { internalMutation } from "./_generated/server";
 export const seed = internalMutation({
   args: {},
   handler: async (ctx) => {
-    // Seed packages with exact pricing from inklessismore.ke
+    // Clear existing packages first
+    const existingPackages = await ctx.db.query("packages").collect();
+    for (const pkg of existingPackages) {
+      await ctx.db.delete(pkg._id);
+    }
+
+    // Seed exactly 7 packages with exact pricing from inklessismore.ke
     await ctx.db.insert("packages", {
       name: "1 Single Laser Tattoo Removal Session",
       description: "Perfect for trying out our service or for very small tattoos. Experience our advanced Picosecond laser technology with negative cold therapy.",
@@ -64,6 +70,52 @@ export const seed = internalMutation({
       ],
       isPopular: false,
       order: 4,
+    });
+
+    await ctx.db.insert("packages", {
+      name: "Eyebrow Tattoo Removal",
+      description: "Specialized treatment for eyebrow tattoos using gentle laser technology suitable for facial areas.",
+      price: 12000,
+      features: [
+        "Specialized facial treatment",
+        "Gentle laser technology",
+        "3-4 sessions typically",
+        "Safe for eyebrow area",
+        "Expert facial specialists"
+      ],
+      isPopular: false,
+      order: 5,
+    });
+
+    await ctx.db.insert("packages", {
+      name: "Stretch Mark Laser Treatment",
+      description: "Advanced laser therapy to reduce the appearance of stretch marks and improve skin texture.",
+      price: 20000,
+      features: [
+        "Complete stretch mark treatment",
+        "Advanced laser technology",
+        "5-6 sessions recommended",
+        "Skin texture improvement",
+        "Professional skin assessment"
+      ],
+      isPopular: false,
+      order: 6,
+    });
+
+    await ctx.db.insert("packages", {
+      name: "Full Body Tattoo Removal Package",
+      description: "Comprehensive package for removing multiple tattoos or large body pieces. Customized treatment plan included.",
+      price: 50000,
+      features: [
+        "Up to 10 treatment sessions",
+        "Full body coverage",
+        "Customized treatment plan",
+        "Priority scheduling",
+        "Dedicated specialist",
+        "Complete aftercare kit"
+      ],
+      isPopular: false,
+      order: 7,
     });
 
     // Clear existing gallery images first
