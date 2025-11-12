@@ -32,9 +32,9 @@ export default function Training() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-cyan-100 via-blue-50 to-purple-100 dark:from-cyan-950 dark:via-blue-950 dark:to-purple-950" />
-      <div className="fixed top-20 left-10 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl -z-10" />
-      <div className="fixed bottom-20 right-10 w-96 h-96 bg-purple-400/30 rounded-full blur-3xl -z-10" />
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-cyan-100 via-blue-50 to-purple-100 dark:from-black dark:via-gray-950 dark:to-gray-900" />
+      <div className="fixed top-20 left-10 w-96 h-96 bg-cyan-400/30 dark:bg-gray-700/20 rounded-full blur-3xl -z-10" />
+      <div className="fixed bottom-20 right-10 w-96 h-96 bg-purple-400/30 dark:bg-gray-600/15 rounded-full blur-3xl -z-10" />
 
       <Navbar />
 
