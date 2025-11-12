@@ -2,7 +2,6 @@ import { authTables } from "@convex-dev/auth/server";
 import { defineSchema, defineTable } from "convex/server";
 import { Infer, v } from "convex/values";
 
-// default user roles. can add / remove based on the project as needed
 export const ROLES = {
   ADMIN: "admin",
   USER: "user",
@@ -18,26 +17,62 @@ export type Role = Infer<typeof roleValidator>;
 
 const schema = defineSchema(
   {
-    // default auth tables using convex auth.
-    ...authTables, // do not remove or modify
+    ...authTables,
 
-    // the users table is the default users table that is brought in by the authTables
     users: defineTable({
-      name: v.optional(v.string()), // name of the user. do not remove
-      image: v.optional(v.string()), // image of the user. do not remove
-      email: v.optional(v.string()), // email of the user. do not remove
-      emailVerificationTime: v.optional(v.number()), // email verification time. do not remove
-      isAnonymous: v.optional(v.boolean()), // is the user anonymous. do not remove
+      name: v.optional(v.string()),
+      image: v.optional(v.string()),
+      email: v.optional(v.string()),
+      emailVerificationTime: v.optional(v.number()),
+      isAnonymous: v.optional(v.boolean()),
+      role: v.optional(roleValidator),
+    }).index("email", ["email"]),
 
-      role: v.optional(roleValidator), // role of the user. do not remove
-    }).index("email", ["email"]), // index for the email. do not remove or modify
+    packages: defineTable({
+      name: v.string(),
+      description: v.string(),
+      price: v.number(),
+      features: v.array(v.string()),
+      isPopular: v.boolean(),
+      imageUrl: v.optional(v.string()),
+      order: v.number(),
+    }),
 
-    // add other tables here
+    blogPosts: defineTable({
+      title: v.string(),
+      slug: v.string(),
+      excerpt: v.string(),
+      content: v.string(),
+      imageUrl: v.optional(v.string()),
+      authorId: v.id("users"),
+      published: v.boolean(),
+      publishedAt: v.optional(v.number()),
+    }).index("by_slug", ["slug"]).index("by_published", ["published"]),
 
-    // tableName: defineTable({
-    //   ...
-    //   // table fields
-    // }).index("by_field", ["field"])
+    galleryImages: defineTable({
+      title: v.string(),
+      beforeImageUrl: v.string(),
+      afterImageUrl: v.string(),
+      description: v.optional(v.string()),
+      order: v.number(),
+    }),
+
+    orders: defineTable({
+      userId: v.id("users"),
+      packageId: v.id("packages"),
+      amount: v.number(),
+      status: v.string(),
+      customerName: v.string(),
+      customerEmail: v.string(),
+      customerPhone: v.optional(v.string()),
+      preferredDate: v.optional(v.string()),
+      notes: v.optional(v.string()),
+    }).index("by_user", ["userId"]),
+
+    siteContent: defineTable({
+      key: v.string(),
+      content: v.string(),
+    }).index("by_key", ["key"]),
   },
   {
     schemaValidation: false,
