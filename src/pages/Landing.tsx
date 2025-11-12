@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "react-router";
-import { Sparkles, Zap, Heart, ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { Sparkles, Zap, Heart, ArrowRight, CheckCircle2, Loader2, Target, Droplets, Clock, User } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useQuery } from "convex/react";
@@ -11,21 +11,44 @@ import { api } from "@/convex/_generated/api";
 export default function Landing() {
   const galleryImages = useQuery(api.gallery.list);
 
-  const features = [
+  const howItWorksSteps = [
+    {
+      icon: <Target className="h-8 w-8 text-cyan-400" />,
+      title: "Target",
+      description: "The laser passes through the top layer of your skin, directly targeting the large ink particles without harming surrounding tissue.",
+    },
     {
       icon: <Sparkles className="h-8 w-8 text-cyan-400" />,
-      title: "1. Consultation",
-      description: "We assess your tattoo and create a personalized, safe removal plan tailored just for you.",
+      title: "Shatter",
+      description: "The ink absorbs the laser's energy and shatters into tiny, dust-like fragments.",
     },
     {
-      icon: <Zap className="h-8 w-8 text-cyan-400" />,
-      title: "2. Treatment",
-      description: "Our advanced Picosecond laser technology combined with negative cold therapy safely breaks down tattoo ink.",
+      icon: <Droplets className="h-8 w-8 text-cyan-400" />,
+      title: "Remove",
+      description: "Your body's immune system naturally flushes away these small particles over the following weeks, lightening the tattoo with each session.",
+    },
+  ];
+
+  const removalFactors = [
+    {
+      icon: <Heart className="h-6 w-6 text-cyan-400" />,
+      title: "Tattoo Location",
+      description: "Areas with better circulation (closer to the heart) like the chest or back often clear faster than extremities like the ankle.",
     },
     {
-      icon: <Heart className="h-8 w-8 text-cyan-400" />,
-      title: "3. Aftercare",
-      description: "We provide comprehensive aftercare instructions and support to ensure your skin heals beautifully.",
+      icon: <Sparkles className="h-6 w-6 text-cyan-400" />,
+      title: "Ink Colors",
+      description: "Black ink is the easiest to remove. Vibrant blues, greens, and other colors may require specialized laser settings for optimal results.",
+    },
+    {
+      icon: <Clock className="h-6 w-6 text-cyan-400" />,
+      title: "Tattoo Age",
+      description: "Older tattoos have naturally faded over time, meaning they often contain less ink and may require fewer sessions than a new one.",
+    },
+    {
+      icon: <User className="h-6 w-6 text-cyan-400" />,
+      title: "Your Lifestyle",
+      description: "This is a partnership. Staying hydrated, avoiding alcohol, and protecting the area from the sun helps your body flush out ink more effectively.",
     },
   ];
 
@@ -64,35 +87,30 @@ export default function Landing() {
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              Uncover Flawless Skin
+              Tattoos Are No Longer
               <br />
               <span className="bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
-                with Advanced Laser Tattoo Removal
+                Permanent
               </span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-              Welcome to Nairobi's premier destination for safe and effective laser tattoo removal! 
-              We use advanced Picosecond laser technology combined with negative cold therapy to fade or remove unwanted tattoos safely and comfortably.
+              Redefine your skin with Kenya's most advanced Picosecond laser technology. Safe, effective, and completely scar-free. Your new beginning starts here.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/packages">
                 <Button size="lg" className="rounded-full px-8 backdrop-blur-sm bg-primary/90 hover:bg-primary shadow-lg">
-                  Book a Free Consultation
+                  View Our Packages
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link to="/gallery">
-                <Button size="lg" variant="outline" className="rounded-full px-8 backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20">
-                  See Before & After
-                </Button>
-              </Link>
+              <Button size="lg" variant="outline" className="rounded-full px-8 backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20" onClick={() => {
+                document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+              }}>
+                Learn How It Works
+              </Button>
             </div>
-
-            <p className="text-lg font-semibold text-cyan-600 dark:text-yellow-500">
-              LET YOUR SKIN SHINE AGAIN! REDEFINE YOUR STORY!
-            </p>
           </motion.div>
 
           {/* Before & After Images Grid */}
@@ -150,6 +168,80 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section id="how-it-works" className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">The Science of a Fresh Start</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Our state-of-the-art Picosecond lasers make tattoo removal a simple, three-step process that works in harmony with your body.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {howItWorksSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+              >
+                <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="mb-4">{step.icon}</div>
+                  <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What Affects Your Removal */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Your Personalized Removal Plan</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Every journey is unique. We consider these key factors to create the perfect treatment plan for you.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {removalFactors.map((factor, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="flex items-start space-x-4">
+                    <div className="mt-1">{factor.icon}</div>
+                    <div>
+                      <h3 className="text-xl font-bold mb-2">{factor.title}</h3>
+                      <p className="text-muted-foreground text-sm">{factor.description}</p>
+                    </div>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
@@ -159,9 +251,9 @@ export default function Landing() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Client Transformations</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">See the Difference for Yourself</h2>
             <p className="text-xl text-muted-foreground">
-              Real results from our satisfied clients
+              From bold statements to barely-there memories. Witness the journey to ink-free skin with our advanced technology.
             </p>
           </motion.div>
 
@@ -233,160 +325,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">How It Works</h2>
-            <p className="text-xl text-muted-foreground">
-              Three simple steps to clear, beautiful skin
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-              >
-                <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/10 border border-white/20 rounded-3xl p-8 h-full shadow-lg hover:shadow-xl transition-shadow">
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Real Results, Clear Skin
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              See the transformations our clients have achieved
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <Card className="backdrop-blur-xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/20 rounded-3xl p-12 shadow-2xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-4">
-                  <img
-                    src="https://www.inklessismore.ke/cdn/shop/files/before3_720x.jpg?v=1731498799"
-                    alt="Before treatment"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  />
-                  <p className="text-center font-semibold">Before Treatment</p>
-                </div>
-                <div className="space-y-4">
-                  <img
-                    src="https://www.inklessismore.ke/cdn/shop/files/after3_720x.jpg?v=1731498799"
-                    alt="After treatment"
-                    className="w-full h-64 object-cover rounded-2xl shadow-lg"
-                  />
-                  <p className="text-center font-semibold">After Treatment</p>
-                </div>
-              </div>
-              <div className="text-center mt-8">
-                <Link to="/gallery">
-                  <Button size="lg" variant="outline" className="rounded-full backdrop-blur-sm bg-white/10 border-white/20 hover:bg-white/20">
-                    View Gallery
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Packages Preview */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Packages</h2>
-            <p className="text-xl text-muted-foreground">
-              Choose a plan that works for you
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { name: "Small Tattoo", price: "KES 5,000", popular: false },
-              { name: "Full Sleeve", price: "KES 25,000", popular: true },
-              { name: "Custom Plan", price: "KES 15,000", popular: false },
-            ].map((pkg, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className={`backdrop-blur-xl border rounded-3xl p-8 h-full shadow-lg hover:shadow-xl transition-all ${
-                  pkg.popular
-                    ? "bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border-cyan-400/50 scale-105"
-                    : "bg-white/10 dark:bg-black/10 border-white/20"
-                }`}>
-                  {pkg.popular && (
-                    <div className="mb-4">
-                      <span className="inline-block px-4 py-1 rounded-full text-sm font-semibold bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 border border-cyan-400/30">
-                        POPULAR
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                  <p className="text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
-                    {pkg.price}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {["Professional consultation", "Advanced laser tech", "Post-care support"].map((feature, i) => (
-                      <li key={i} className="flex items-start space-x-2">
-                        <CheckCircle2 className="h-5 w-5 text-cyan-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/packages">
-                    <Button className="w-full rounded-full backdrop-blur-sm" variant={pkg.popular ? "default" : "outline"}>
-                      Learn More
-                    </Button>
-                  </Link>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ambassador CTA */}
+      {/* Final CTA */}
       <section className="py-20 px-4">
         <div className="max-w-5xl mx-auto">
           <motion.div
@@ -396,14 +335,14 @@ export default function Landing() {
           >
             <Card className="backdrop-blur-xl bg-gradient-to-br from-purple-500/20 to-cyan-500/20 border border-white/20 rounded-3xl p-12 shadow-2xl text-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Become an Ambassador
+                Ready to Start Your Journey?
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Love your results? Share your journey and earn rewards! Our Ambassador Program offers exclusive discounts and access for every successful referral.
+                Let's talk about your path to clear skin.
               </p>
-              <Link to="/training">
+              <Link to="/packages">
                 <Button size="lg" className="rounded-full px-8 backdrop-blur-sm bg-primary/90 hover:bg-primary shadow-lg">
-                  Join the Program
+                  Get Your Free Consultation Today
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
