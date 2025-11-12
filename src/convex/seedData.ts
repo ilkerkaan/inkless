@@ -72,7 +72,7 @@ export const seed = internalMutation({
       await ctx.db.delete(img._id);
     }
 
-    // Seed gallery images with working URLs from Convex storage
+    // Seed gallery images with working URLs from uploaded images
     await ctx.db.insert("galleryImages", {
       title: "Back Tattoo Removal - First Session Results",
       beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/308bf6f0-9632-4951-a07b-c2b256b044fa",
@@ -135,6 +135,70 @@ export const seed = internalMutation({
       afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/a6cdf2c5-f015-4301-bd36-0ec121275e56",
       description: "Remarkable transformation on leg tattoo",
       order: 8,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Chest Tattoo Removal Progress",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/4671d68e-3366-48b0-a0d3-2f470eb89cda",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/e3a16882-1925-44d8-aae5-76277b0e1ee3",
+      description: "Excellent progress on chest area tattoo",
+      order: 9,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Hand Tattoo Fading",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1edae293-7997-4cf9-a2cc-974debb57d82",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/b7418aff-6640-42be-acd3-354f0496d9e4",
+      description: "Hand tattoo showing significant fading",
+      order: 10,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Upper Arm Tattoo Treatment",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/533e5455-c852-495f-8b23-a18fbde959a1",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/f057b39b-452e-49ce-a584-a09cd27730e0",
+      description: "Upper arm tattoo removal in progress",
+      order: 11,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Side Tattoo Removal",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/cfc273f3-42be-46cd-827c-9375d6c4c288",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/83822655-744c-49e4-bbaf-f5f1dc39e9a0",
+      description: "Side body tattoo showing great results",
+      order: 12,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Lower Leg Tattoo Progress",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/2b08d61c-2900-497a-86a6-161f73ece24f",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/fcca02cc-bae8-49ba-b8d5-eb5203ca442f",
+      description: "Lower leg tattoo fading effectively",
+      order: 13,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Forearm Symbol Removal",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/551c7feb-013e-4ab7-8b8e-aea4a413ff52",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/8fe4e191-d85d-4de5-959e-58d5ba08cc65",
+      description: "Symbol tattoo removal showing excellent progress",
+      order: 14,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Neck Tattoo Treatment",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/93bea3be-51cb-4d06-9251-3ac865405782",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/eee7a961-6574-4a7c-ad38-c8889980c80b",
+      description: "Neck area tattoo removal in progress",
+      order: 15,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Thigh Tattoo Fading",
+      beforeImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/5487eadc-8853-4df3-95db-e15f23a9b8f9",
+      afterImageUrl: "https://harmless-tapir-303.convex.cloud/api/storage/1fab343e-47c5-4dad-ac55-0732155e649d",
+      description: "Thigh tattoo showing remarkable fading",
+      order: 16,
     });
 
     // Seed site content with exact wording from inklessismore.ke
