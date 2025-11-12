@@ -66,6 +66,55 @@ export const seed = internalMutation({
       order: 4,
     });
 
+    // Seed gallery images with real before/after photos from inklessismore.ke
+    await ctx.db.insert("galleryImages", {
+      title: "Arm Tattoo Removal",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before1_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after1_720x.jpg?v=1731498799",
+      description: "Complete removal of arm tattoo after multiple sessions",
+      order: 1,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Wrist Tattoo Fading",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before2_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after2_720x.jpg?v=1731498799",
+      description: "Significant fading of wrist tattoo",
+      order: 2,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Chest Tattoo Removal",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before3_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after3_720x.jpg?v=1731498799",
+      description: "Professional removal of chest tattoo",
+      order: 3,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Back Tattoo Transformation",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before4_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after4_720x.jpg?v=1731498799",
+      description: "Complete back tattoo removal",
+      order: 4,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Leg Tattoo Fading",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before5_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after5_720x.jpg?v=1731498799",
+      description: "Effective fading of leg tattoo",
+      order: 5,
+    });
+
+    await ctx.db.insert("galleryImages", {
+      title: "Shoulder Tattoo Removal",
+      beforeImageUrl: "https://www.inklessismore.ke/cdn/shop/files/before6_720x.jpg?v=1731498799",
+      afterImageUrl: "https://www.inklessismore.ke/cdn/shop/files/after6_720x.jpg?v=1731498799",
+      description: "Professional shoulder tattoo removal",
+      order: 6,
+    });
+
     // Seed site content with exact wording from inklessismore.ke
     await ctx.db.insert("siteContent", {
       key: "about_us",
